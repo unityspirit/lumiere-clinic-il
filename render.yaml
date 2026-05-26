@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: lumiere-clinic
+    env: static
+    buildCommand: echo "Static site — no build needed"
+    staticPublishPath: .
+    headers:
+      - path: /frames-webp/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /frames-mobile/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable

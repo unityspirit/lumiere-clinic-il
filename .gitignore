@@ -1,0 +1,4 @@
+veo_clips/
+*.mp4
+frames-raw/
+node_modules/

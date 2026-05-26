@@ -1,0 +1,356 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>דוגמת אתר — תבנית לעסק שלך</title>
+    <meta name="description" content="דוגמת אתר קולנועי. ראה איך העסק שלך ייראה באינטרנט.">
+    <link rel="icon" type="image/png" href="assets/logo.png?v=3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cinematic Canvas Background -->
+    <canvas id="gl-canvas"></canvas>
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">החברה שלך</div>
+            <div class="loader-bar-track">
+                <div class="loader-bar-fill" id="loader-fill"></div>
+            </div>
+            <div class="loader-pct" id="loader-pct">0%</div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">
+                <img src="assets/logo.png" alt="החברה שלך Clinic" class="logo-img">
+                <span class="logo-text">החברה שלך</span>
+            </a>
+            <div class="nav-links" id="nav-links">
+                <a href="#" class="nav-link" data-scroll="1">שירותים</a>
+                <a href="#" class="nav-link" data-scroll="2">מומחים</a>
+                <a href="#" class="nav-link" data-scroll="3">תוצאות</a>
+                <a href="#" class="nav-link" data-scroll="4">О קליניקה</a>
+                <a href="#" class="nav-link" data-scroll="5">צור קשר</a>
+            </div>
+            <a href="tel:#" class="nav-phone">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                הטלפון שלך
+            </a>
+            <button class="burger" id="burger" aria-label="תפריט">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div class="nav-scrim" id="nav-scrim" hidden></div>
+    <div class="nav-drawer" id="nav-drawer" hidden>
+        <div class="drawer-header">
+            <span class="logo-text">החברה שלך</span>
+            <button class="drawer-close" id="drawer-close" aria-label="סגור">✕</button>
+        </div>
+        <a href="#" class="drawer-link" data-scroll="1">שירותים</a>
+        <a href="#" class="drawer-link" data-scroll="2">מומחים</a>
+        <a href="#" class="drawer-link" data-scroll="3">תוצאות</a>
+        <a href="#" class="drawer-link" data-scroll="4">О קליניקה</a>
+        <a href="#" class="drawer-link" data-scroll="5">צור קשר</a>
+        <div class="drawer-phone">
+            <a href="tel:#">הטלפון שלך</a>
+        </div>
+    </div>
+
+    <!-- UI Layer -->
+    <div id="ui-layer">
+        <div class="stage">
+
+            <!-- SECTION 0: Hero -->
+            <section class="page" data-index="0">
+                <div class="page-inner hero-inner">
+                    <div class="hero-content">
+                        <div class="reveal-3d">
+                            <div class="badge">המותג שלך • הנישה שלך • ההתמחות שלך</div>
+                        </div>
+                        <h1 class="hero-title reveal-3d">
+                            כאן יהיה שם<br><span class="gradient-text">החברה שלך</span>
+                        </h1>
+                        <p class="hero-desc reveal-3d">כאן אתה יכול לכתוב את הסלוגן שלך, תיאור קצר או הצעה חמה — כל מה שתרצה!</p>
+                        <div class="hero-cta reveal-3d">
+                            <a href="#" class="btn-primary" data-scroll="5">כפתור מותאם</a>
+                            <a href="#" class="btn-outline" data-scroll="1">הקישורים שלך</a>
+                        </div>
+                        <div class="hero-stats reveal-3d">
+                            <div class="stat">
+                                <span class="stat-num">12+</span>
+                                <span class="stat-label">שנות ניסיון</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat">
+                                <span class="stat-num">15 000+</span>
+                                <span class="stat-label">довольных לקוחов</span>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat">
+                                <span class="stat-num">4.9</span>
+                                <span class="stat-label">рейтинг על Яндексе</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 1: Services -->
+            <section class="page" data-index="1">
+                <div class="page-inner">
+                    <div class="reveal-3d"><div class="badge">השירותים שלך</div></div>
+                    <h2 class="section-title reveal-3d">שלךи <span class="gradient-text">שירותים</span></h2>
+                    <p class="section-desc reveal-3d">כאן אתה יכול לספר על ההצעה שלך כמו בדוגמאות למטה.</p>
+                    <div class="services-grid">
+                        <div class="service-card reveal-3d" id="svc-injection">
+                            <div class="svc-icon">💉</div>
+                            <h3>Инъекционная קוסמטולוגיה</h3>
+                            <p>טיפול בוטוקס, контурная пластика, ביו-רביטליזציה, мезоטיפול, нитевой ליפטינג</p>
+                            <span class="svc-price">от 8 000 ₪</span>
+                        </div>
+                        <div class="service-card reveal-3d" id="svc-hardware">
+                            <div class="svc-icon">⚡</div>
+                            <h3>מכשירית קוסמטולוגיה</h3>
+                            <p>SMAS-ליפטינג, RF-ליפטינג, фотоомоложение BBL, микротоковая טיפול, лазерная шлифовка</p>
+                            <span class="svc-price">от 5 000 ₪</span>
+                        </div>
+                        <div class="service-card reveal-3d" id="svc-laser">
+                            <div class="svc-icon">✨</div>
+                            <h3>Лазерные פרוצדורותы</h3>
+                            <p>הסרת שיער בלייזר, удаление пигментации, лечение אקנה, сосудистая טיפול</p>
+                            <span class="svc-price">от 3 000 ₪</span>
+                        </div>
+                        <div class="service-card reveal-3d" id="svc-face">
+                            <div class="svc-icon">🌿</div>
+                            <h3>Уходовые תוכניות</h3>
+                            <p>HydraFacial, химические פילינגи, ניקוי פנים, אלגינט маски, уход בתוך кожей</p>
+                            <span class="svc-price">от 4 000 ₪</span>
+                        </div>
+                        <div class="service-card reveal-3d" id="svc-body">
+                            <div class="svc-icon">🦋</div>
+                            <h3>Эстетика тела</h3>
+                            <p>Криолиполиз, LPG-עיסוי, прессоטיפול, обёртывания, אנטי-צלוליט תוכניות</p>
+                            <span class="svc-price">от 6 000 ₪</span>
+                        </div>
+                        <div class="service-card reveal-3d" id="svc-antiage">
+                            <div class="svc-icon">🔬</div>
+                            <h3>Anti-Age תוכניות</h3>
+                            <p>Персонализированные פרוטוקולы омоложения, PRP-טיפול, плазмоליפטינג, IV-טיפול</p>
+                            <span class="svc-price">от 12 000 ₪</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: Specialists -->
+            <section class="page" data-index="2">
+                <div class="page-inner">
+                    <div class="reveal-3d"><div class="badge">כאן יכולים להיות דוגמאות לעבודות שלך</div></div>
+                    <h2 class="section-title reveal-3d">דוגמאות <span class="gradient-text">שלךих עבודות</span></h2>
+                    <p class="section-desc reveal-3d">הוסף את מה שירשים את כולם</p>
+                    <div class="specialists-grid">
+                        <div class="specialist-card reveal-3d">
+                            <div class="spec-avatar">ЕК</div>
+                            <h3>אלנה כהן</h3>
+                            <p class="spec-title">Главный רופא, דרמטולוג-קוסמטולוגית</p>
+                            <p class="spec-exp">ותק: 18 שנות</p>
+                            <div class="spec-tags">
+                                <span>הזרקות</span>
+                                <span>Anti-age</span>
+                                <span>Нити</span>
+                            </div>
+                        </div>
+                        <div class="specialist-card reveal-3d">
+                            <div class="spec-avatar">АМ</div>
+                            <h3>אנה Миронова</h3>
+                            <p class="spec-title">רופא-קוסמטולוגית, лазеротерапевт</p>
+                            <p class="spec-exp">ותק: 12 שנות</p>
+                            <div class="spec-tags">
+                                <span>Лазер</span>
+                                <span>BBL</span>
+                                <span>Пигментация</span>
+                            </div>
+                        </div>
+                        <div class="specialist-card reveal-3d">
+                            <div class="spec-avatar">ДС</div>
+                            <h3>Дмитрий Соколов</h3>
+                            <p class="spec-title">רופא-דרמטולוג, трихолог</p>
+                            <p class="spec-exp">ותק: 15 שנות</p>
+                            <div class="spec-tags">
+                                <span>Трихология</span>
+                                <span>PRP</span>
+                                <span>Дерматология</span>
+                            </div>
+                        </div>
+                        <div class="specialist-card reveal-3d">
+                            <div class="spec-avatar">МВ</div>
+                            <h3>מרים Волкова</h3>
+                            <p class="spec-title">רופא-קוסמטולוגית, מכשיריים методики</p>
+                            <p class="spec-exp">ותק: 10 שנות</p>
+                            <div class="spec-tags">
+                                <span>SMAS</span>
+                                <span>RF</span>
+                                <span>HydraFacial</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: Results / Gallery -->
+            <section class="page" data-index="3">
+                <div class="page-inner">
+                    <div class="reveal-3d"><div class="badge">עלינו</div></div>
+                    <h2 class="section-title reveal-3d"><span class="gradient-text">עלינו</span></h2>
+                    <p class="section-desc reveal-3d">ספר על ההישגים החברה שלך, שתף ביקורות טובות</p>
+                    <div class="results-grid">
+                        <div class="result-card reveal-3d">
+                            <div class="result-number">98%</div>
+                            <p>לקוחов довольны תוצאהом אחרי первого קורס פרוצדורות</p>
+                        </div>
+                        <div class="result-card reveal-3d">
+                            <div class="result-number">5 000+</div>
+                            <p>успешных פרוצדורות טיפול בוטוקס בתוך אחריдний שנה</p>
+                        </div>
+                        <div class="result-card reveal-3d">
+                            <div class="result-number">87%</div>
+                            <p>לקוחов חוזרים к לנו повторно</p>
+                        </div>
+                        <div class="result-card reveal-3d">
+                            <div class="result-number">300+</div>
+                            <p>положительных отзывов על Яндекс.Кארטах</p>
+                        </div>
+                    </div>
+                    <div class="testimonials reveal-3d">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">«Невероятный תוצאה אחרי קורס ביו-רביטליזציה! Кожа сияет, морщины стали практически незаметны. אלנה כהן — настоящий профессионал.»</p>
+                            <div class="testimonial-author">
+                                <strong>Ирина К.</strong>
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">«Прошла курс лазерной эпиляции — מהיר, ללא כאב, и эффект превзошёл כל ожидания. Клиника על высшем רמה!»</p>
+                            <div class="testimonial-author">
+                                <strong>אלכס Д.</strong>
+                                <span>★★★★★</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: About -->
+            <section class="page" data-index="4">
+                <div class="page-inner">
+                    <div class="reveal-3d"><div class="badge">הצעות מיוחדות</div></div>
+                    <h2 class="section-title reveal-3d"><span class="gradient-text">מבצעים ותוכניות</span> עדכניים</h2>
+                    <p class="section-desc reveal-3d">Выשנהные предложения עבור שלךשלו עסקים</p>
+                    <div class="about-grid">
+                        <div class="about-card reveal-3d">
+                            <div class="about-icon">🏥</div>
+                            <h3>Медицинская רישיון</h3>
+                            <p>כל פרוצדורותы выполняются в лицензированном медицинском учреждении с полным соблюдением סטנדרטארטов בטיחות.</p>
+                        </div>
+                        <div class="about-card reveal-3d">
+                            <div class="about-icon">🔬</div>
+                            <h3>Оригинальные препараты</h3>
+                            <p>Мы используем только מוסמכים препараты מ официальных дистрибьюторов: Allergan, Galderma, Merz.</p>
+                        </div>
+                        <div class="about-card reveal-3d">
+                            <div class="about-icon">⚙️</div>
+                            <h3>Передовое оборудование</h3>
+                            <p>מכשירים Sciton BBL, Ulthera, Candela, Lumenis — золотой סטנדרטארט מכשירית קוסמטולוגיתии.</p>
+                        </div>
+                        <div class="about-card reveal-3d">
+                            <div class="about-icon">🤝</div>
+                            <h3>אישי גישה</h3>
+                            <p>כל визит начинается с детальной консультации и диагностики עור על מכשיר VISIA.</p>
+                        </div>
+                        <div class="about-card reveal-3d">
+                            <div class="about-icon">🌟</div>
+                            <h3>Премиальный сервис</h3>
+                            <p>Уютная אווירה, אישי מנהל, гибкий график и אונליין-הרשמה 24/7.</p>
+                        </div>
+                        <div class="about-card reveal-3d">
+                            <div class="about-icon">📜</div>
+                            <h3>ערבות לתוצאה</h3>
+                            <p>Мы предоставляем פרוטוקול פרוצדורות и отвечаем בתוך תוצאה — חינם תיקון в течение 14 дней.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: Contact -->
+            <section class="page" data-index="5">
+                <div class="page-inner">
+                    <div class="reveal-3d"><div class="badge">צור קשר</div></div>
+                    <h2 class="section-title reveal-3d">נתחיל <span class="gradient-text">שיתוף פעולה</span></h2>
+                    <p class="section-desc reveal-3d">ציין כאן את פרטי הקשר, הכתובת ורשתות חברתיות שלך כדי שלקוחות יוכלו ליצור קשר</p>
+                    <div class="contact-grid">
+                        <div class="contact-form-wrap reveal-3d">
+                            <form class="contact-form" id="contact-form">
+                                <div class="form-row">
+                                    <input type="text" placeholder="השם שלך" required id="form-name">
+                                    <input type="tel" placeholder="+972-__-___-____" required id="form-phone">
+                                </div>
+                                <select id="form-service">
+                                    <option value="" disabled selected>הנישה שלך</option><option>רפואה / יופי</option><option>מסעדות / HoReCa</option><option>בנייה / שיפוצים</option><option>אדריכלות / עיצוב</option><option>IT / ייעוץ</option><option>רכב / דיטיילינג</option><option>כושר / ספורט</option><option>חינוך</option><option>תיירות / מלונות</option><option>ייצור</option><option>אחר</option>
+                                </select>
+                                <textarea placeholder="שלךи משאלות או вопросы..." rows="3" id="form-message"></textarea>
+                                <button type="submit" class="btn-primary btn-submit" id="btn-submit">להזמין אתר</button>
+                            </form>
+                        </div>
+                        <div class="contact-info reveal-3d">
+                            <div class="info-block">
+                                <div class="info-icon">📍</div>
+                                <div>
+                                    <strong>כתובת</strong>
+                                    <p>הכתובת שלך</p>
+                                </div>
+                            </div>
+                            <div class="info-block">
+                                <div class="info-icon">📞</div>
+                                <div>
+                                    <strong>טלפון</strong>
+                                    <p><a href="tel:#">הטלפון שלך</a></p>
+                                </div>
+                            </div>
+                            <div class="info-block">
+                                <div class="info-icon">🕐</div>
+                                <div>
+                                    <strong>שעות עבודה</strong>
+                                    <p>Пн—ו׳: 9:00 — 21:00<br>ש׳: 10:00 — 18:00</p>
+                                </div>
+                            </div>
+                            <div class="info-block">
+                                <div class="info-icon">💬</div>
+                                <div>
+                                    <strong>מסנג׳רים</strong>
+                                    <p>
+                                        <a href="#">WhatsApp</a> · 
+                                        <a href="#">Telegram</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="license-badge">
+                                <span>🏥</span> רישיון
+                            </div>
+                        </div>
+                    </div>
+                <div style="text-align:center;margin-top:32px"><a href="https://unityspirit.github.io/global-plus-il/#page-4" class="btn-primary" style="font-size:16px;padding:14px 40px;display:inline-block;text-decoration:none">חזרה לעמוד הראשי</a></div></div></section></div></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
